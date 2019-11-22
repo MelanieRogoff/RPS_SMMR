@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rock, Paper, Scissors</title>
+</head>
+
+<body>
+
+    <h1>Hi!</h1>
+
+    <script type="text/javascript">
+
+        // Create array that lists our options:
+
+        const choices = ["rock", "paper", "scissors"];
+
+        // Create variables to hold # of wins, losses, and ties. They start at 0. Use let because they change.
+
+        let wins = 0;
+        let losses = 0;
+        let ties = 0;
+
+        const yo = confirm("Do you wanna play a game?");
+        if (yo) {
+            alert("YASS QUEEN");
+
+            //Play 10 times 
+
+            for (let i = 0; i < 10; i++) {
+                const hi = choices[Math.floor(Math.random() * 2)];
+                let guess = prompt("Choose wisely ... Rock, Paper, or Scissors?");
+                guess = guess.toLowerCase();
+
+               
+
+                if (guess === "rock" || guess === "paper" || guess === "scissors") {
+                    alert("I chose " + hi);
+                }
+
+                if ((guess === "rock" && hi === "scissors") || (guess === "scissors" && hi === "paper") || (guess === "paper" && hi === "rock")) {
+                    wins++;
+                    alert("You won " + wins + "time(s)! I'm happy for you but definitely not happy for me *laughs in ajshdfgdg*");
+                } else if (guess === hi) {
+                    ties++;
+                    alert("We tied " + ties + "time(s)!  I'm LIVID");
+                    //Coding so computer (hi) chooses first and it's the one that you'd lose to
+                } else if ((hi === "rock" && guess === "scissors") || (hi === "scissors" && guess === "paper") || (hi === "paper" && guess === "rock")) {
+                    losses++;
+                    alert("YOU LOST " + losses + " time(s). I'm so disapointed in you - not angry, just disappointed.");
+                }
+                 else {
+                    alert("WOOWWWW you need to pick Rock, Paper, or Scissors. It's not that hard, bruh. Like Elle Woods said about getting into Harvard Law School, like what, is it hard?!");
+                }
+            }
+        }
+    else {
+            alert("Fine, I didn't want to play with you ANYWAYS *huffs in 0101010101010*");
+        }
+    </script>
+
+</body>
+
+</html>
