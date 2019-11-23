@@ -4,6 +4,6 @@ This is a basic JavaScript-coded version of "Rock, Paper, Scissors", developed a
 
 To play, copy and paste the following link into your browser: (https://melanierogoff.github.io/RPS_SMMR/).
 
-Screenshot Sample of Winning Dialogue:
+- Screenshot Sample of Winning Dialogue:
 
 ![Winning Dialogue](Winner.png)
