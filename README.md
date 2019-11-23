@@ -6,4 +6,4 @@ To play, copy and paste the following link into your browser: (https://melaniero
 
 Screenshot Sample of Winning Dialogue:
 
-[!Winning Dialogue](Winner.png)
+[!Winning Dialogue](https://github.com/MelanieRogoff/RPS_SMMR/blob/master/Winner.png)
