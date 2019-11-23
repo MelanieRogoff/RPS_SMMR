@@ -22,40 +22,61 @@
         let losses = 0;
         let ties = 0;
 
+        // Coding for confirm button goes OUTSIDE for loop. Ending of the code goes AFTER for loop.
+
         const yo = confirm("Do you wanna play a game?");
         if (yo) {
             alert("YASS QUEEN");
 
-            //Play 10 times 
+            //Loop around 10 times 
 
             for (let i = 0; i < 10; i++) {
+                // Below code makes const for our (randomized) choices array. Math.floor(Math.random() * 2 is the amount of choices in the array (3) MINUS 1, and you multiply this by the randomized function. 
+
                 const hi = choices[Math.floor(Math.random() * 2)];
+
+                // Below code creates prompt, stores the user's input in the prompt as a variable called guess. Use LET because user input will become the new value of guess, and that value will change depending on user input. 
+
                 let guess = prompt("Choose wisely ... Rock, Paper, or Scissors?");
+
+                //Below is the code that puts all inputs into lowercase so we can evaluate answers properly (if it wasn't lowercase, users would lose if they didn't capitalize correctly [hard to account for]).
                 guess = guess.toLowerCase();
 
-               
+
+                // Below is the code for the message that appears RIGHT after user inputs "rock", "paper", or "scissors". hi = Math.Floor(Math.random()) choices, which are the computer's choices. 
 
                 if (guess === "rock" || guess === "paper" || guess === "scissors") {
                     alert("I chose " + hi);
                 }
 
+                // Below is the code for when users win - ie. user picks rock, computer (hi) picks scissors - user wins, alert pops up and adds 1 to the wins counter.
+
                 if ((guess === "rock" && hi === "scissors") || (guess === "scissors" && hi === "paper") || (guess === "paper" && hi === "rock")) {
                     wins++;
                     alert("You won " + wins + "time(s)! I'm happy for you but definitely not happy for me *laughs in ajshdfgdg*");
+
+                // Below is the code for the instance that user input matches computer input - resulting in a tie. This also adds 1 to the ties counter. 
+
                 } else if (guess === hi) {
                     ties++;
                     alert("We tied " + ties + "time(s)!  I'm LIVID");
-                    //Coding so computer (hi) chooses first and it's the one that you'd lose to
+
+                //Below is the code saying that computer (hi) chooses 1st - this creates instances in which the user loses, and it adds 1 to the losses counter. 
+
                 } else if ((hi === "rock" && guess === "scissors") || (hi === "scissors" && guess === "paper") || (hi === "paper" && guess === "rock")) {
                     losses++;
                     alert("YOU LOST " + losses + " time(s). I'm so disapointed in you - not angry, just disappointed.");
                 }
-                 else {
+
+                //Below is the code that is applied when the user inputs ANYTHING but "rock", "paper", or "scissors"- screen will prompt you to start again. 
+
+                else {
                     alert("WOOWWWW you need to pick Rock, Paper, or Scissors. It's not that hard, bruh. Like Elle Woods said about getting into Harvard Law School, like what, is it hard?!");
                 }
             }
         }
-    else {
+        // Below is the else statement that goes OUTSIDE the for loop - it's connected to the confirm button coded at the beginning. When user hits Cancel, the pop up appears and the game stops. 
+        else {
             alert("Fine, I didn't want to play with you ANYWAYS *huffs in 0101010101010*");
         }
     </script>
